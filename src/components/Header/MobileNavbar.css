@@ -1,0 +1,56 @@
+/* MobileNavbar.css */
+.mobile-navbar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-navbar {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #FBFADA;
+        border-top: 1px solid #ddd;
+        z-index: 1000;
+        justify-content: space-around;
+        padding-top: 5px;
+    }
+
+    .mobile-navbar .nav-item {
+        flex: 1;
+        text-align: center;
+    }
+
+    .mobile-navbar .nav-link {
+        color: #12372A;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-navbar .nav-link:hover {
+        color: #ADBC9F;
+    }
+
+    .mobile-navbar .nav-link.active {
+        font-size: 1.75rem;
+        /* Slightly larger font size */
+        position: relative;
+    }
+
+    .mobile-navbar .nav-link.active::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        /* Smaller size for the circle */
+        height: 40px;
+        background-color: #ADBC9F;
+        border-radius: 50%;
+        z-index: -1;
+    }
+}
