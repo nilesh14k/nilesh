@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 function GitHubRepo({ setRepos }) {
-    const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+    const GITHUB_TOKEN = "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";
     const username = 'nilesh14k';
 
     useEffect(() => {
