@@ -47,13 +47,13 @@ function GitHubRepo({ setRepos }) {
                     })
                     .catch(error => {
                         console.error(`Error fetching topics for ${repo.name}: `, error);
-                        return null; // Skip repos with fetch errors
+                        return null;
                     });
 
                 const websitePromise = fetch(`https://api.github.com/repos/${username}/${repo.name}/contents/website.md`, { headers })
                     .then(response => {
                         if (!response.ok) {
-                            return { ...repo, websiteContent: null }; // If no website.md, return null
+                            return { ...repo, websiteContent: null };
                         }
                         return response.json();
                     })
@@ -61,7 +61,7 @@ function GitHubRepo({ setRepos }) {
                         if (websiteData && websiteData.content) {
                             const decodedContent = atob(websiteData.content);
                             const lines = decodedContent.split('\n');
-                            const firstLine = lines.length > 0 ? lines[0].replace(/^# /, '') : repo.name; // Remove markdown heading if present
+                            const firstLine = lines.length > 0 ? lines[0].replace(/^# /, '') : repo.name;
                             const secondLine = lines.length > 1 ? lines[1] : 'No description available.';
                             const imageUrlMatch = decodedContent.match(/!\[.*?\]\((.*?)\)/);
                             const imageUrl = imageUrlMatch ? imageUrlMatch[1] : null;
@@ -80,9 +80,9 @@ function GitHubRepo({ setRepos }) {
             Promise.all(fetchTopicsAndWebsitePromises)
                 .then(reposWithWebsite => {
                     const filteredRepos = reposWithWebsite
-                        .filter(repo => repo !== null) // Filter out null entries
-                        .filter(repo => Array.isArray(repo.topics) && repo.topics.includes('nilesh14k')); // Filter based on topics
-                    setRepos(filteredRepos); // Update the parent state
+                        .filter(repo => repo !== null)
+                        .filter(repo => Array.isArray(repo.topics) && repo.topics.includes('nilesh14k'));
+                    setRepos(filteredRepos);
                 })
                 .catch(error => {
                     console.error('Error fetching topics or website.md files: ', error);
