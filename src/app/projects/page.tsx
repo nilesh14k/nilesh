@@ -16,7 +16,7 @@ export default function ProjectsPage() {
 
   useEffect(() => {
     const fetchRepos = async () => {
-      const res = await fetch('/api/github-projects') // We’ll create this next
+      const res = await fetch('/api/github-projects')
       const data = await res.json()
       setRepos(data)
     }
@@ -34,12 +34,11 @@ export default function ProjectsPage() {
           ))}
         </div>
       ) : (
-
         <div className="grid md:grid-cols-2 gap-8">
           {repos.map((repo, idx) => (
             <ProjectCard
               key={idx}
-              title={repo.name}
+              title={repo.name.replace(/-/g, ' ')}
               description={repo.description}
               tech={[repo.language]}
               link={repo.html_url}
