@@ -16,10 +16,10 @@ export default function Home() {
       <div className="flex flex-col md:flex-row items-center gap-12">
         <div className="md:w-1/2 space-y-6">
           <h1 className="text-4xl md:text-5xl font-bold">
-            Hi, I'm Nilesh Kumar 👋
+            Hi, I&apos;m Nilesh Kumar 👋
           </h1>
           <p className="text-lg text-gray-700">
-            I’m a full-stack developer, AI enthusiast, and founder of{' '}
+            I&apos;m a full-stack developer, AI enthusiast, and founder of{' '}
             <strong>AtomicWaveAI</strong> and <strong>HOMATIQ</strong> — where I build intelligent software
             and smart home automation solutions. My passion lies in using AI to solve real-world problems,
             from fitness to home security.

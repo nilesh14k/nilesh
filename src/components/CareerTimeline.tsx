@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import Image from 'next/image'
 
 const timeline = [
   {
@@ -47,10 +48,12 @@ export default function CareerTimeline() {
             className="relative"
           >
             <div className="flex items-center gap-4">
-              <img
+              <Image
                 src={item.logo}
                 alt={item.org}
-                className="w-8 h-8 rounded-full object-cover"
+                width={32}
+                height={32}
+                className="rounded-full object-cover"
               />
               <div>
                 <h3 className="text-xl font-semibold">{item.title}</h3>

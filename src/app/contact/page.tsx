@@ -8,7 +8,7 @@ export default function ContactPage() {
       <h1 className="text-4xl font-bold mb-8">Get in Touch</h1>
       <p className="text-gray-700 text-lg mb-8">
         Whether you have a question, a project, or just want to say hi —
-        my inbox is always open. I’ll try my best to get back to you!
+        my inbox is always open. I&apos;ll try my best to get back to you!
       </p>
 
       <div className="space-y-6">
