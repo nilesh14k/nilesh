@@ -43,6 +43,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <link rel="canonical" href="https://nilesh-cyan.vercel.app/" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "http://schema.org",
+              "@type": "Person",
+              name: "Nilesh Kumar",
+              url: "https://nilesh-cyan.vercel.app",
+              description: "Full Stack Developer & AI Enthusiast",
+              image: "https://nilesh-cyan.vercel.app/profile.png",
+              sameAs: [
+                "https://www.linkedin.com/in/nileshkumar14",
+                "https://github.com/nilesh14k"
+              ]
+            })
+          }}
+        />
+
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}

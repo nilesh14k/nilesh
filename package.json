@@ -1,17 +1,19 @@
 {
-  "name": "nilesh14k.github.io",
+  "name": "nilesh-cyan.vercel.app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "framer-motion": "^12.5.0",
     "lucide-react": "^0.483.0",
     "next": "15.2.3",
+    "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
